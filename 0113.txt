@@ -118,3 +118,19 @@ GIT PULL : git pull [git remote -v로 확인]
 GIT ADD .
 GIT COMMIT -m 'bula'
 GIT PUSH ORIGIN MASTER
+
+
+# 049 split 메서드
+# 다음과 같이 날짜를 표현하는 문자열이 있을 때 연도, 월, 일로 나눠보세요.
+
+date = "2023-01-13"
+
+a=date.split('-')
+
+
+b=a[0]
+c=a[1]
+d=a[2]
+
+print(f'오늘은 {a[0]}년 {a[1]}월 {a[2]}일 입니다.')
+print(f'오늘은 {b}년 {c}월 {d}일 입니다.')
