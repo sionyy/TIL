@@ -1,6 +1,7 @@
 # Chapter 03-2
 # 파이썬 문자형
 
+
 #문자열 생성
 str1 = "I am Python"
 str2 = 'python'
@@ -78,3 +79,37 @@ print(str(True), type(str(True)))
 
 print("Capitalize: ", str_01.capitalize())
 print("endswith?: ", str_02.endswith("e"))
+print("replace :", str_01.replace("thon", 'Good'))
+print("sorted :", sorted(str_01))
+print("split :", str_03.split(' '))
+
+
+# 반복(시퀀스)
+im_str = "Good Boy!"
+
+print(dir(im_str)) #__iter__
+
+#출력
+for i in im_str:
+  print(i)
+
+
+#슬라이싱
+str_sl = "Nice Python"
+
+#연습
+print(str_sl[0:3])
+print(str_sl[5:])
+print(str_sl[:len(str_sl)])
+print(str_sl[:len(str_sl)-1])
+print(str_sl[1:9:2])
+print(str_sl[-5:])
+print(str_sl[1:-2])
+print(str_sl[::-1])
+
+
+#아스키 코드(또는 유니코드)
+a= 'z'
+
+print(ord(a)) # 문자 -> 아스키코드로
+print(chr(122)) # 아스키코드 -> 문자로
