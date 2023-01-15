@@ -58,17 +58,23 @@ print(multi_str)
 
 
 #문자열 연산
-str01 = "Python"
-str02 = "apple"
+str_01 = "Python"
+str_02 = "apple"
 str_03 = "how are you doing"
 
-print(str01 * 3)
-print(str01 + str02)
-print('y' in str01)
-print('P' not in str01)
+print(str_01 * 3)
+print(str_01 + str_02)
+print('y' in str_01)
+print('P' not in str_01)
 
 
 # 문자열 형 변환
 print(str(66), type(str(66)))
 print(str(10.1))
 print(str(True), type(str(True)))
+
+
+#문자열 함수(upper, isalnum, startswith, count, endswith, isaLpha ...)
+
+print("Capitalize: ", str_01.capitalize())
+print("endswith?: ", str_02.endswith("e"))
