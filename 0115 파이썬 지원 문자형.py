@@ -10,7 +10,7 @@ str4 = '''Thank you!'''
 
 print(type(str1), type(str2), type(str3), type(str4))
 print(len(str1))
-
+print('>>>>>>>>1')
 
 
 # 빈 문자열
@@ -28,8 +28,10 @@ print("I'm Boy")
 print('I\'m Boy')
 
 print('a \"\" b')
-print('a /t b')
-print('a /n b')
+print('a \tb')
+print('a \nb')
+print('>>>>>>>>2')
+
 
 escape_str1 = "Do you have a \"retro games\"?"
 print(escape_str1)
@@ -40,7 +42,7 @@ t_s1 = "Click \t Start"
 t_s2 = "New Line \nCheck"
 print(t_s1)
 print(t_s2)
-
+print('>>>>>>>>3')
 
 #Raw String 출력 [\ 표시]
 raw_s = r'D\python\test'
@@ -66,8 +68,9 @@ str_03 = "how are you doing"
 print(str_01 * 3)
 print(str_01 + str_02)
 print('y' in str_01)
+print('>>>>>>>>4')
 print('P' not in str_01)
-
+print('p' not in str_01)
 
 # 문자열 형 변환
 print(str(66), type(str(66)))
