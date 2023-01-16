@@ -1,2 +1,9 @@
-for i in range(-5, 6):
-    print(i, end=' ')
+def su(num):
+    sum = 0
+    for c in list(str(num)):
+        sum += int(c)
+
+    print(sum)
+
+n=input()
+su(n)
