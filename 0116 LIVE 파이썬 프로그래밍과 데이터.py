@@ -104,6 +104,46 @@ print('<<<<<<<<<<')
 #set - 리스트에서 중복 제거
 lst1 = [2, 1, 5, 6, 2, 2, 2, 2, 1, 3]
 print(lst1)
-print(set(lst1))
+lst_f = (set(lst1))
+print(lst_f)
 
-print(lst1.sort)
+lst.sort()
+print(lst)
+
+
+
+#값 추가
+s={1,2,3,4,5}
+s.add(6) # 1개 추가
+print(s)
+
+
+s.update({11,12,8,6,7}) #여러개 추가
+print(s)
+
+print('>>>>>>>>>>>>>')
+#값 삭제
+s.remove(6) # 삭제하는 값이 없으면 버그남
+print(s)
+
+s.discard(12) # discard는 값이 없어도 버그 안남!!
+print(s)
+
+s.clear
+print(s)
+
+print('>>>>>>>>>>>>>>>>>')
+#집합
+s1 =[1,2,3,4,5]
+s2 =[2,4,6,8]
+
+#교집합
+s1,s2=set(s1),set(s2)
+print(s1&s2)
+
+#합집합
+print(s1|s2) #shift + \
+print(s1.union(s2)) #union함수 이용
+
+#차집합
+print(s1-s20)
