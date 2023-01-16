@@ -84,6 +84,9 @@ b = 6
 c = .7
 d = 12.7
 
+#파이썬 소숫점 변환
+# https://blockdmask.tistory.com/534
+
 """
 print(float(b))
 print(int(c))

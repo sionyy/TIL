@@ -23,4 +23,87 @@ print(x,y)
 
 # 방법2)
 # y, x = x, y
-print(id(x))
+
+print('aaaaaa\rbbbb')
+
+
+
+#변수
+a=3
+b=5
+
+print(f'{a} + {b} = {a+b} 입니다.')
+print(a, "+", b, "=",a+b , "입니다.")
+# 3 + 5 = 8 입니다.
+
+
+#swap
+a=3
+b=5
+
+temp=a
+a=b
+b=temp
+print(a,b)
+
+
+# 자료형
+a=3
+print(type(a))
+
+a=3.14
+print(round(a,1)) #소수점 첫번째까지 출력[6부터 반올림]
+print(f'{a:.1f}')
+
+a=5
+a=str(a)    #'5'
+print(a, type(a))
+
+#오늘은 "100%" 입니다.
+print('오늘은 "100%" 입니다.')
+
+
+#slicing 
+#★ 꼭 시뮬레이션 해보기
+s= "1234567"
+print(s[:3])
+print(s[3:])
+print(s[2:5])
+print(s[2:-2])
+print(s[5:2:-1])
+print(s[1:5:2])
+
+
+#boolean
+a,b = 0,-1
+a,b = bool(a), bool(b)
+print(a,b)
+
+
+# 리스트
+lst=[1,2,3,4,5]
+print(lst)
+print(len(lst[1:]))
+print(lst[-1])
+
+
+#튜플
+tp=(1,2,3,4,5)
+print(tp)
+print(len(tp))
+print(tp[-1])
+
+
+#range
+print(list(range(3)))
+print(list(range(1,5)))
+
+
+print('<<<<<<<<<<')
+
+#set - 리스트에서 중복 제거
+lst1 = [2, 1, 5, 6, 2, 2, 2, 2, 1, 3]
+print(lst1)
+print(set(lst1))
+
+print(lst1.sort)

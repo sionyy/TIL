@@ -3,6 +3,11 @@
 
 #리스트 자료형(순서o, 중복o, 수정o, 삭제o)
 
+#리스트 한줄로 표기 방법
+# for n in lis:
+#     print(n, end=' ')
+# print()
+
 #선언
 a = []
 b = list()
