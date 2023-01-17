@@ -1,1 +1,9 @@
-s = input('숫자를 입력해주세요 : ')
+def su(num):
+    sum = 0
+    for c in list(str(num)):
+        sum += int(c)
+
+    print(sum)
+
+s=input()
+su(n)
