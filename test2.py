@@ -1,6 +1,5 @@
-list1=[]
-s=map(int, input().split())
-list1.append(s)
-
-for i in list1:
-    print(i,end='')
+numbers = [1,2,3]
+result = 0
+for i in numbers:
+  result += i
+print(result)

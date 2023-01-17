@@ -1,9 +1,4 @@
-lst1=[1,2,3]
-lst2=[4,5,6]
-# lst3라는 리스트에 lst1과 lst2의 합을 저장하는 리스트로 만든 후 출력
+num = [2,4,6,8,10]
 
-def func(a,b):
-    return a+b
-
-lst3 = list(map(func, lst1, lst2))
-print(lst3)
+for i in range(0,10):
+    for j in range()
