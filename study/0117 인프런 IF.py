@@ -25,4 +25,4 @@ else :
 
 q = [10, 20, 30] #리스트
 w = {70, 80, 90, 100}
-e = {"name" : "Lee", "city : Seoul"}
+e = {"name" : "Lee", "city" : "Seoul"}
