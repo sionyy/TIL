@@ -1,9 +1,4 @@
-def su(num):
-    sum = 0
-    for c in list(str(num)):
-        sum += int(c)
-
-    print(sum)
-
-n=input()
-su(n)
+sum = 0
+for i in range(1,101):
+    sum += i
+print(sum)

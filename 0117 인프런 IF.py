@@ -25,4 +25,10 @@ else :
 
 q = [10, 20, 30] #리스트
 w = {70, 80, 90, 100}
-e = {"name" : "Lee", "city : Seoul"}
+e = {"name" : "Lee", "city": "Seoul", "grade": "A"}
+r = (10, 12, 14)
+
+print(15 in q)  #F 출력
+print(90 in w)  #T 출력
+print(12 not in r)
+print("Seoul" in e.values())
