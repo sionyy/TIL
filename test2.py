@@ -1,5 +1,5 @@
-numbers = [1,2,3]
-result = 0
-for i in numbers:
-  result += i
-print(result)
+a= int(input())
+
+lst = [5,6,1,8,-4,-73,4,2,20,84]
+
+print(lst[a:0:-1].split())

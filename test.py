@@ -1,4 +1,4 @@
-num = [2,4,6,8,10]
+a,b,c,d = map(int, input().split())
+list = [a,b,c,d]
 
-for i in range(0,10):
-    for j in range()
+print(int(a+b+c+d))

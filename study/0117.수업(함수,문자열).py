@@ -54,3 +54,82 @@ def print_into(**args):
     print(args)
     for i,j in args.items():
         print(i,j)
+        
+        
+print('>>>>>>>>>>>>')
+
+#filter
+#리스트나 튜플과 같은 순회 가능한 데이터구조값들을 함수에 적용하는데
+#적용후 값중 True만 반환 !!!
+#**데이터에 일괄적용 = map
+#**데이터에 일괄 적용하는데 True 값만 따로 저장 = filter
+#**lambda 익명함수 (사용자함수를 직접 적지 않고 간단하게 사용하고 싶을 때)
+
+#리스트에서 짝수만
+num = [1,2,3,4,5,6,7,8,9,10]
+
+def get_even(t):
+    return True if t%2==0 else False
+
+result=filter(get_even, num)
+print(list(result))
+#filter(함수, iterebles)
+
+
+#lambda
+#익명함수. 함수를 간략하게 적기 위해서 사용
+
+#숫자 2개 입력받고 getsum 함수로 전달
+#get sum 함수에서 전달받은 두 수의 합을 리턴함
+#리턴받은 값 출력하기
+
+def summ(x,y):
+    return x+y
+
+ret=summ(3,5)
+print(ret)
+
+#lambda함수 활용
+result = (lambda a,b:a+b)(3,5)
+#또는
+sum2 = (lambda a,b:a+b)
+print(sum2(3,5))
+
+#활용 =(lambda 파라미터:리턴)(인자값)
+
+print('>>>>>>>>>>>>>>>')
+
+#예제
+# 두 리스트 값들의 합을 lst3에 람다함수를 사용하여 값을 채운 후 출력
+# lst3 =[7,9,11,13,15]
+
+lst1=[1,2,3,4,5]
+lst2=[6,7,8,9,10]
+
+result = (lambda x,y:x+y)
+lst3 = map(result, lst1, lst2)
+print(list(lst3))
+
+
+
+#recursion 재귀 !! or  재귀호출
+#함수가 하나 있는데 함수가 자기자신을 계속 호출
+
+for i in range(1,11):
+    print(i, end=' ')
+
+print()
+
+for i in range(10,0,-1):
+    print(i, end=' ')
+    
+print()
+
+def abc(level):
+    if level == 4:
+        return
+    print(level,end=' ')
+    abc(level+1)
+    print(level,end=' ')
+    
+abc(1)
