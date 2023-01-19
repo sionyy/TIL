@@ -1,7 +1,3 @@
-word=input()
-num=len(word)//2    
-if len(word)%2: 
-    mid=word[num]  
-else:
-    mid=word[num-1:num+1]
-print(mid)
+num=0
+for i in range(1,11):
+    print(i)
