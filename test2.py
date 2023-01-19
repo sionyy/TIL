@@ -1,5 +1,8 @@
-a= int(input())
-
-lst = [5,6,1,8,-4,-73,4,2,20,84]
-
-print(lst[a:0:-1].split())
+fruits=input().split(',')
+result=[]
+for i in fruits:
+    i = i.lower()
+    i = i.replace('rotten', '')
+    result.append(i)
+    
+print(result)

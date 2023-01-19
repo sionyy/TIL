@@ -1,4 +1,7 @@
-a,b,c,d = map(int, input().split())
-list = [a,b,c,d]
-
-print(int(a+b+c+d))
+word=input()
+num=len(word)//2    
+if len(word)%2: 
+    mid=word[num]  
+else:
+    mid=word[num-1:num+1]
+print(mid)
