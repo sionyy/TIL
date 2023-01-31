@@ -1,27 +1,33 @@
-class car:
-    def __init__(self,name,price):
-        self.name = name
-        self.price = price
+from collections import Counter
+lst = ['apple', 'mango', 'banana', 'mango', 'apple','apple']
 
-    def __add__(self, another):
-        return self.price+another.price
-    
-    def __str__(self):
-        return f'{self.name}의 가격은 {self.price}입니다.'
-    
-        
-kia = car('k8', 300)
-bmw = car('m5', 500)
-hd = car('h2' , 100)
-print(kia.price + bmw.price)
+# counter는 리스트 또는 문자열 안에 데이터가 각각 몇개씩 있는지 알려줌
 
-# 커스터마이즈 [.price안써도 되게하기]
-print(kia+bmw+hd.price)
+print(Counter(lst))
+
+ret = dict(Counter(lst))
+print(ret)
 
 
-print(f'{kia.name}의 가격은 {kia.price}입니다.')
+st = 'an apple mango'
+ret = dict(Counter(st))
+print(ret)
+ret = sorted(ret.items(), key = lambda x:x[1], reverse=True)
+print(ret)
 
-# __str__ 메서드 사용해서 print(kia)만 써도 되게 하기
-print(kia)
 
-# 인스턴스 삭제 : del
+st = 'an applemango'
+#st요소를 세어, 최빈값 n개를 반환한다.
+
+ret = Counter(st).most_common(2)
+print(ret)
+
+
+#추가적으로 Counter를 가지고 덧셈 뺄셈도 지원합니다.
+a = Counter('apple')
+b = Counter('mango')
+print(a+b)
+
+# 문자열 대조할 때 사용 가능
+a.subtract(b)
+print(a)
