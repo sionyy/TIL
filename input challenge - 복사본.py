@@ -8,7 +8,7 @@ sys.stdin = open("input.txt", "r")
 # hello
 
 # 1.아래에 정답을 입력하시오
-st = input()
+st=input()
 print(st)
 
 
@@ -21,9 +21,9 @@ print(st)
 # 1 2 3
 
 # 2.아래에 정답을 입력하시오
-num = int(input())
-a,b,c = map(int, input().split())
-print(num)
+n=int(input())
+a,b,c=map(int,input().split())
+print(n)
 print(a,b,c)
 
 
@@ -36,9 +36,9 @@ print(a,b,c)
 # 1.2 2.3 3.4
 
 # 3.아래에 정답을 입력하시오
-F = float(input())
-a,b,c = map(float, input().split())
-print(F)
+n=float(input())
+a,b,c=map(float,input().split())
+print(n)
 print(a,b,c)
 
 
@@ -49,9 +49,8 @@ print(a,b,c)
 # one two three
 
 # 4.아래에 정답을 입력하시오
-lst = list(map(str, input().split()))
-print(lst)
-
+lst=list(input().split())
+print(*lst)
 
 
 # 5.한 줄에 있는 공백으로 구분된 숫자들을 각각 숫자로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
@@ -62,8 +61,8 @@ print(lst)
 # 1 2 45 43
 
 # 5.아래에 정답을 입력하시오
-lst = list(map(int, input().split()))
-print(lst)
+lst=map(int,input().split())
+print(*lst)
 
 
 # 6.한 줄에 있는 공백없는 한자리 숫자들을 각각 숫자로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
@@ -73,8 +72,9 @@ print(lst)
 # 1234
 
 # 6.아래에 정답을 입력하시오
-lst = map(int, input().split())
+lst=list(map(int,input()))
 print(*lst)
+
 
 # 7.2차원 (N*N) 공백없는 한자리 숫자들을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # N=4
@@ -88,10 +88,11 @@ print(*lst)
 # 1000
 
 # 7.아래에 정답을 입력하시오
-num = int(input())
-print(num)
+n=int(input())
+arr=[list(map(int,input())) for _ in range(n)]
 
-arr= list(map(int, input().split))
+for i in range(n):
+    print(*arr[i])
 
 # 8.2차원 (N*N) 정수값을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기 (N값과 arr값)
 # N=4
@@ -105,18 +106,27 @@ arr= list(map(int, input().split))
 # 13 14 15 16
 
 # 8.아래에 정답을 입력하시오
+n=int(input())
+arr=[list(map(int,input().split())) for _ in range(n)]
 
+for i in range(n):
+    print(*arr[i])
 
 
 # 9.(입력값 없음) 0값 10개를 가진 1차원 lst 생성 후 출력해서 값이 잘 들어갔지 확인해보기
 # lst = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-
-
-
+lst=[0]*10
+print(*lst)
 
 # 10.(입력값 없음) 0값 3 * 3 개를 가진 2차원 arr생성 후 출력해서 값이 잘 들어갔지 확인해보기
 # arr = [[0, 0, 0],
 #        [0, 0, 0],
 #        [0, 0, 0]]
 
+n=3
+arr=[[0]*n for _ in range(n)]
+for i in range(n):
+    print(*arr[i])
+
+print('수고하셨습니다.')

@@ -21,9 +21,9 @@ print(st)
 # 1 2 3
 
 # 2.아래에 정답을 입력하시오
-num = int(input())
+N = int(input())
 a,b,c = map(int, input().split())
-print(num)
+print(N)
 print(a,b,c)
 
 
@@ -37,7 +37,7 @@ print(a,b,c)
 
 # 3.아래에 정답을 입력하시오
 F = float(input())
-a,b,c = map(float, input().split())
+a,b,c, = map(float, input().split())
 print(F)
 print(a,b,c)
 
@@ -53,7 +53,6 @@ lst = list(map(str, input().split()))
 print(lst)
 
 
-
 # 5.한 줄에 있는 공백으로 구분된 숫자들을 각각 숫자로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # (map 함수를 이용하여 문자열을 숫자로 바꾼 후 리스트로 변환)
 # lst = [1, 2, 45, 43]
@@ -63,8 +62,7 @@ print(lst)
 
 # 5.아래에 정답을 입력하시오
 lst = list(map(int, input().split()))
-print(lst)
-
+print(*lst)
 
 # 6.한 줄에 있는 공백없는 한자리 숫자들을 각각 숫자로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # lst = [1, 2, 3, 4]
@@ -73,8 +71,7 @@ print(lst)
 # 1234
 
 # 6.아래에 정답을 입력하시오
-lst = map(int, input().split())
-print(*lst)
+
 
 # 7.2차원 (N*N) 공백없는 한자리 숫자들을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # N=4
@@ -88,10 +85,7 @@ print(*lst)
 # 1000
 
 # 7.아래에 정답을 입력하시오
-num = int(input())
-print(num)
 
-arr= list(map(int, input().split))
 
 # 8.2차원 (N*N) 정수값을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기 (N값과 arr값)
 # N=4

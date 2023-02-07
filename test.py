@@ -1,19 +1,41 @@
-lst = [['F','E','W'],['D','C','A']]
+# 워드 작업 중 정전으로 인하여 컴퓨터가 강제 종료 되었습니다.
+# 다시 전기가 들어와 컴퓨터를 켰더니 다행이도 자동복구가 실행 되었습니다.
+# 우리는 자동복구가 되었을떄 커서의 위치가 어디인지를 알려줘야 합니다.
+# 커서의 위치를 알려주는 프로그램을 완성해 주세요.
+# 시간복잡도 O(n^2) 보다 빨라야 합니다.
 
-st = input()
+# 6*12 size 리스트 입니다.
+
+# 정답 : 2,3
+
+curser=[
+ '##########',
+ '##########',
+ '###_______',
+ '__________',
+ '__________',
+ '__________',
+]
 
 
-def findCh(T):
-    flag = 0
-    for i in range(2):
-        for j in range(3):
-            if lst[i][j] == T:
-                flag = flag+1
-                result = '발견'
-            else:
-                result = '미발견'
-        if flag==1:
-            break
-    return result
 
-print(findCh(st))
+
+
+
+
+#
+#
+# All = ''
+# for i in range(len(curser)):
+#     All = All+curser[i]
+#
+#
+# count = 0
+# for i in All:
+#     if i =='#':
+#         count+=1
+#
+#
+# a = count // 10
+# b = count % 10
+# print(f'{a},{b}')
