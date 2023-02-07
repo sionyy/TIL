@@ -1,41 +1,27 @@
-# 워드 작업 중 정전으로 인하여 컴퓨터가 강제 종료 되었습니다.
-# 다시 전기가 들어와 컴퓨터를 켰더니 다행이도 자동복구가 실행 되었습니다.
-# 우리는 자동복구가 되었을떄 커서의 위치가 어디인지를 알려줘야 합니다.
-# 커서의 위치를 알려주는 프로그램을 완성해 주세요.
-# 시간복잡도 O(n^2) 보다 빨라야 합니다.
-
-# 6*12 size 리스트 입니다.
-
-# 정답 : 2,3
-
-curser=[
- '##########',
- '##########',
- '###_______',
- '__________',
- '__________',
- '__________',
+arr = [
+    [65000, 35, 42, 70],
+    [70, 35, 65000, 1300],
+    [65000, 30000, 38, 42]
 ]
 
+Max = int(-21e8)
+for i in range(3):
+    for j in range(4):
+        if arr[i][j]>Max:
+            Max = arr[i][j] # 65000
 
+bucket = [0]*(Max+1)
 
+for i in range(3):
+    for j in range(4):
+        bucket[arr[i][j]]+=1
 
+bucketMax = int(-21e8)
+for i in range(len(bucket)):
+    if bucket[i] > bucketMax:
+        bucketMax = bucket[i]
 
+for i in range(len(bucket)): #버킷의 최대값인 3
+    if bucketMax == bucket[i]:
+        print(i)
 
-
-#
-#
-# All = ''
-# for i in range(len(curser)):
-#     All = All+curser[i]
-#
-#
-# count = 0
-# for i in All:
-#     if i =='#':
-#         count+=1
-#
-#
-# a = count // 10
-# b = count % 10
-# print(f'{a},{b}')
