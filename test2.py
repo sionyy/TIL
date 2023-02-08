@@ -1,23 +1,39 @@
-# 0~9까지의 N장 카드
-# 가장 많은 카드에 적힌 숫자, 카드가 몇장인지 출력하는 프로그램
+# T = int(input())
+# for test_case in range(1, T + 1):
 
-# N = 카드 장 수
-# 입력: 카드장수 n\ 카드번호
-T = int(input())
-for test_case in range(1, T + 1):
-    num = int(input())
-    lst = list(map(int, input()))
+K,N,M = map(int, input().split())
+lst = list(map(int, input().split()))
 
-    bucket = [0] * 10
+result = K
+count = 0
+flag =0
+count =0
 
-    for i in range(len(lst)):
-        bucket[lst[i]] += 1
+for i in range(1, len(lst)):  # 조건1 : 최대 이동수를 넘었을 경우
+    if lst[i] - lst[i - 1] > K:
+        charge = 0
+        flag = 1
+        break
 
-    Max = 0
-    for i in range(len(bucket)):
-        if bucket[i] > Max:
-            Max = bucket[i]
-        if Max == bucket[i]:
-            ans = i  # 가장 많은 카드의 번호
+dummy = 0
+while True:
+    if flag == 1:
+        break
 
-    print(f'#{test_case} {ans} {Max}')
+
+    for i in range(len(lst) - 1, -1, -1):
+        if result == lst[i]:
+            result = result + K
+            count += 1
+
+    if result >= N:
+        break
+    dummy +=1
+    if dummy ==20:
+        result = result - 1
+
+
+charge = count - 1
+if flag == 1:
+    charge = 0
+print(charge)

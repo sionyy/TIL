@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # 0~9까지의 N장 카드
 # 가장 많은 카드에 적힌 숫자, 카드가 몇장인지 출력하는 프로그램
 
@@ -21,3 +22,8 @@ for i in range(len(bucket)):
         ans = i #가장 많은 카드의 번호
 
 print(f'{ans} {Max}')
+=======
+num = input()
+lst = map(int,input())
+print(sum(lst))
+>>>>>>> Stashed changes

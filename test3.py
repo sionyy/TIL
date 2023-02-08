@@ -1,18 +1,12 @@
-N= 10 # 배열크기
-M= 3 # 연속개수
+lst = [7, 4, 2, 0, 0, 6, 0, 7, 0]
 
-lst = [1,2,3,4,5,6,7,8,9,10]
+Max = 0
+for i in range(len(lst)):  # 버켓생성을 위한  최대값 구하기
+    if lst[i] > Max:
+        Max = lst[i]
 
-#묶음 구하기
-sum_lst = []
-for i in range(0,N-M+1):
-    gggg = sum(lst[i:i+M])
+bucket = [0] * (Max + 1)
 
-# N의 크기를 가진 list에서
-# 연속된 M개 비교
+for i in range(len(lst)):  # 버켓에 데이터 담기
+    bucket[lst[i]] += 1
 
-Max = -int(21e8) #최대값 구하기
-for i in range(0,N-M+1): # 묶기 위해 최대범위 -M+1
-    if lst[i]+lst[i+1]+lst[i+2]>Max:
-        Max = lst[i]+lst[i+1]+lst[i+2]
-print(Max)

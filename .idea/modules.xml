@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< Updated upstream
       <module fileurl="file://$PROJECT_DIR$/.idea/sion.iml" filepath="$PROJECT_DIR$/.idea/sion.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/TIL.iml" filepath="$PROJECT_DIR$/.idea/TIL.iml" />
+>>>>>>> Stashed changes
     </modules>
   </component>
 </project>
