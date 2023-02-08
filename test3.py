@@ -1,30 +1,18 @@
-arr = [
-    [65000, 35, 42, 70],
-    [70, 35, 65000, 1300],
-    [65000, 30000, 38, 42]
-]
+N= 10 # 배열크기
+M= 3 # 연속개수
 
-Max = -int(21e8)  # arr Max값 구하기
-for y in range(len(arr)):
-    for x in range(len(arr[y])):
-        if arr[y][x] > Max:
-            Max = arr[y][x]
+lst = [1,2,3,4,5,6,7,8,9,10]
 
-cnt = [0] * (Max + 1)  # bucket 값 등록 (MAX+1)
-for y in range(3):
-    for x in range(4):
-        cnt[arr[y][x]] += 1
+#묶음 구하기
+sum_lst = []
+for i in range(0,N-M+1):
+    gggg = sum(lst[i:i+M])
 
+# N의 크기를 가진 list에서
+# 연속된 M개 비교
 
-Max = -int(21e8)    #가장 많이 등록된 값 찾기
-for i in range(len(cnt)):
-    if cnt[i] > Max:
-        Max = cnt[i]
-
-
-lst = []
-for i in range(len(cnt)):
-    if cnt[i] == Max:
-        lst.append(i)
-
-print(*lst)
+Max = -int(21e8) #최대값 구하기
+for i in range(0,N-M+1): # 묶기 위해 최대범위 -M+1
+    if lst[i]+lst[i+1]+lst[i+2]>Max:
+        Max = lst[i]+lst[i+1]+lst[i+2]
+print(Max)

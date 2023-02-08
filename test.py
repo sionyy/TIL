@@ -1,27 +1,23 @@
-arr = [
-    [65000, 35, 42, 70],
-    [70, 35, 65000, 1300],
-    [65000, 30000, 38, 42]
-]
+# 0~9까지의 N장 카드
+# 가장 많은 카드에 적힌 숫자, 카드가 몇장인지 출력하는 프로그램
 
-Max = int(-21e8)
-for i in range(3):
-    for j in range(4):
-        if arr[i][j]>Max:
-            Max = arr[i][j] # 65000
+# N = 카드 장 수
+# 입력: 카드장수 n\ 카드번호
 
-bucket = [0]*(Max+1)
+lst = list(map(int, input()))
+# lst = [4, 9, 6, 7, 9]
 
-for i in range(3):
-    for j in range(4):
-        bucket[arr[i][j]]+=1
+bucket = [0] * 10
 
-bucketMax = int(-21e8)
+
+for i in range(len(lst)):
+    bucket[lst[i]]+=1
+
+Max =0
 for i in range(len(bucket)):
-    if bucket[i] > bucketMax:
-        bucketMax = bucket[i]
+    if bucket[i] > Max:
+        Max = bucket[i]
+    if Max == bucket[i]:
+        ans = i #가장 많은 카드의 번호
 
-for i in range(len(bucket)): #버킷의 최대값인 3
-    if bucketMax == bucket[i]:
-        print(i)
-
+print(f'{ans} {Max}')
