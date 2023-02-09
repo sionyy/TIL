@@ -1,8 +1,21 @@
-N = 9
-lst = [7, 4, 2, 0, 0, 6, 0, 7, 0]
-# lst = list(map(int, input().split()))
+arr = [
+    [3, 5, 4],
+    [1, 1, 2],
+    [1, 3, 9]]
 
-count =0
-for i in range(N):
-    for j in range(i+1,N):
-        if
+dy = [1,-1,0,0]
+dx = [0,0,-1,1]
+
+y , x = map(int,input().split())
+
+def direct(y , x):
+    sum = 0
+    for i in range(4):
+        ny = y + dy[i]
+        nx = x + dx[i]
+
+        if 0 <= ny < 3 and 0 <= nx < 3:
+            sum = sum+arr[ny][nx]
+    return sum
+
+print(direct(y,x))

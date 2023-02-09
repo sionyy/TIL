@@ -1,29 +1,37 @@
-<<<<<<< Updated upstream
-# 0~9까지의 N장 카드
-# 가장 많은 카드에 적힌 숫자, 카드가 몇장인지 출력하는 프로그램
+# 변수입력
+# 1. test case
+# 2. 가로길이 N
+# 3. 상자높이 H
 
-# N = 카드 장 수
-# 입력: 카드장수 n\ 카드번호
+# 문제 설계: 상자 높이의 bucket을 만든다.
+# 박스의 최상단 높이 기준 오른쪽 끝까지 0의 갯수를 센다.
+# 가장 많은 0의 개수가 정답
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    lst = list(map(int, input().split()))
 
-lst = list(map(int, input()))
-# lst = [4, 9, 6, 7, 9]
+    bit = [0] * len(lst)
 
-bucket = [0] * 10
+    def bitmaker(num):   #수평기준 상자의 존재유무 (num = num층)
+        for i in range(len(lst)):
+            if lst[i] != 0:
+                bit[i] =lst[i] - num +1
+                if bit[i] <0:
+                    bit[i] = 0
+        return bit
 
 
-for i in range(len(lst)):
-    bucket[lst[i]]+=1
 
-Max =0
-for i in range(len(bucket)):
-    if bucket[i] > Max:
-        Max = bucket[i]
-    if Max == bucket[i]:
-        ans = i #가장 많은 카드의 번호
+    def zerocount(value):
+        count = 0
+        for i in range(len(bitmaker(value))):
+            if bitmaker(value)[i] == 0:
+                count += 1
+        return  count
 
-print(f'{ans} {Max}')
-=======
-num = input()
-lst = map(int,input())
-print(sum(lst))
->>>>>>> Stashed changes
+    result = []
+    for i in lst:
+        result.append(zerocount(i))
+
+    print(f'#{test_case} {max(result)}')

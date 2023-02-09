@@ -1,12 +1,32 @@
-lst = [7, 4, 2, 0, 0, 6, 0, 7, 0]
+arr = [[3, 3, 5, 3, 1],
+       [2, 2, 4, 2, 6],
+       [4, 9, 2, 3, 4],
+       [1, 1, 1, 1, 1],
+       [3, 3, 5, 9, 2]]
+
+dy = [1,1,-1,-1]
+dx = [-1,1,-1,1]   #왼오왼오
+
+# y,x = map(int,input().split())
+
+def getsum(y,x):
+    sum = 0
+    for i in range(4):
+        ny = y + dy[i]
+        nx = x + dx[i]
+
+        if 0<= ny < 5 and 0 <= nx < 5:
+            sum = sum + arr[ny][nx]
+    return  sum
+
+result =[]
+for i in range(4):
+    for j in range(4):
+        result.append(getsum(i,j))
 
 Max = 0
-for i in range(len(lst)):  # 버켓생성을 위한  최대값 구하기
-    if lst[i] > Max:
-        Max = lst[i]
+for i in result:
+    if i > Max:
+        Max = i
 
-bucket = [0] * (Max + 1)
-
-for i in range(len(lst)):  # 버켓에 데이터 담기
-    bucket[lst[i]] += 1
-
+print(Max)

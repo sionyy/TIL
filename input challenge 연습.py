@@ -12,6 +12,7 @@ st = input()
 print(st)
 
 
+
 # 2.정수형 변수 입력 받고 출력해서 값이 잘 들어갔지 확인해보기
 # N = 45
 # A, B, C = 1, 2, 3
@@ -21,10 +22,12 @@ print(st)
 # 1 2 3
 
 # 2.아래에 정답을 입력하시오
-N = int(input())
-a,b,c = map(int, input().split())
-print(N)
+st = int(input())
+print(st)
+a,b,c = map(int,input().split())
 print(a,b,c)
+
+
 
 
 # 3.실수형 변수 입력 받고 출력해서 값이 잘 들어갔지 확인해보기
@@ -36,10 +39,11 @@ print(a,b,c)
 # 1.2 2.3 3.4
 
 # 3.아래에 정답을 입력하시오
-F = float(input())
-a,b,c, = map(float, input().split())
-print(F)
+st = float(input())
+print(st)
+a,b,c = map(float, input().split())
 print(a,b,c)
+
 
 
 # 4.한 줄에 있는 공백으로 구분된 단어들을 각각 문자열로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
@@ -62,7 +66,9 @@ print(lst)
 
 # 5.아래에 정답을 입력하시오
 lst = list(map(int, input().split()))
-print(*lst)
+print(lst)
+
+
 
 # 6.한 줄에 있는 공백없는 한자리 숫자들을 각각 숫자로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # lst = [1, 2, 3, 4]
@@ -71,7 +77,10 @@ print(*lst)
 # 1234
 
 # 6.아래에 정답을 입력하시오
-
+lst = list(map(int, input()))
+for i in range(len(lst)):
+    print(lst[i],end='')
+print()
 
 # 7.2차원 (N*N) 공백없는 한자리 숫자들을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # N=4
@@ -85,6 +94,13 @@ print(*lst)
 # 1000
 
 # 7.아래에 정답을 입력하시오
+N = int(input())
+arr = [list(map(int, input()))for _ in range(N)]
+for i in range(N):
+    for j in range(4):
+        print(arr[i][j],end ='')
+    print()
+
 
 
 # 8.2차원 (N*N) 정수값을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기 (N값과 arr값)
@@ -98,12 +114,22 @@ print(*lst)
 # 9 10 11 12
 # 13 14 15 16
 
+
 # 8.아래에 정답을 입력하시오
+
+N = int(input())
+arr = [list(map(int, input().split()))for _ in range(N)]
+for i in range(N):
+    for j in range(4):
+        print(arr[i][j],end =' ')
+    print()
 
 
 
 # 9.(입력값 없음) 0값 10개를 가진 1차원 lst 생성 후 출력해서 값이 잘 들어갔지 확인해보기
 # lst = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+lst = [0]*10
+print(lst)
 
 
 
@@ -113,4 +139,7 @@ print(*lst)
 # arr = [[0, 0, 0],
 #        [0, 0, 0],
 #        [0, 0, 0]]
-
+n=3
+arr=[[0]*n for _ in range(n)]
+for i in range(n):
+    print(*arr[i])
