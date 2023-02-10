@@ -1,21 +1,14 @@
-arr = [
-    [3, 5, 4],
-    [1, 1, 2],
-    [1, 3, 9]]
+arr = [3,7,1,2]
+sum =0
 
-dy = [1,-1,0,0]
-dx = [0,0,-1,1]
-
-y , x = map(int,input().split())
-
-def direct(y , x):
-    sum = 0
+def abc(level):
+    global sum
+    if level ==3:
+        print(sum,end=' ')
+        return
     for i in range(4):
-        ny = y + dy[i]
-        nx = x + dx[i]
+        sum+=arr[i]
+        abc(level+1)
+        sum -= arr[i]
 
-        if 0 <= ny < 3 and 0 <= nx < 3:
-            sum = sum+arr[ny][nx]
-    return sum
-
-print(direct(y,x))
+abc(0)
