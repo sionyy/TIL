@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 arr = [[3, 3, 5, 3, 1],
        [2, 2, 4, 2, 6],
        [4, 9, 2, 3, 4],
@@ -36,3 +37,7 @@ for i in range(4):
             print(i,j)
 
 # print(Max)
+=======
+pattern = [list(map(str, input())) for _ in range(2)]
+print(pattern[0])
+>>>>>>> c7f82a5702d3cf9fab3f6e67b4f589ad8587a5ab
