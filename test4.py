@@ -1,21 +1,23 @@
-arr = [
-    [3, 5, 4],
-    [1, 1, 2],
-    [1, 3, 9]]
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    lst = list(map(int, input().split()))
 
-dy = [1,-1,0,0]
-dx = [0,0,-1,1]
 
-y , x = map(int,input().split())
 
-def direct(y , x):
-    sum = 0
-    for i in range(4):
-        ny = y + dy[i]
-        nx = x + dx[i]
+    MAX = int(-21e8)
+    for i in range(len(lst)):
+        if MAX < lst[i]:
+            MAX = lst[i]
 
-        if 0 <= ny < 3 and 0 <= nx < 3:
-            sum = sum+arr[ny][nx]
-    return sum
+    result = []
+    for i in range(len(lst)):
+        if MAX == lst[i]:
+            result = lst[i:]
+            break
 
-print(direct(y,x))
+    count = 0
+    for i in range(len(result)):
+        if result[i] != MAX:
+            count+=1
+    # print(f'#{test_case} {count}')

@@ -24,9 +24,15 @@ for i in range(4):
     for j in range(4):
         result.append(getsum(i,j))
 
-Max = 0
-for i in result:
-    if i > Max:
-        Max = i
 
-print(Max)
+# Max = 0
+# for i in result:
+#     if i > Max:
+#         Max = i
+
+for i in range(4):
+    for j in range(4):
+        if getsum(i,j) == 24:
+            print(i,j)
+
+# print(Max)
