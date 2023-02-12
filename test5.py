@@ -1,53 +1,27 @@
-<<<<<<< HEAD
-lst = [['_', '_', '_', '_', '_'],
-       ['_', '_', '_', '_', '_'],
-       ['_', '_', '_', '_', '_'],
-       ['_', '_', '_', '_', '_']]
+# 풀이 설계
+# 각각의 범위에 대해 1을 할당
+# 할당된값이 1을 넘을 경우 경우당 범위 1로 계산.
+T = int(input())
+for test_case in range(1, T + 1):
 
+    N = int(input())
+    lst = [list(map(int, input().split()))for _ in range(N)]
+    MAP = [[0]*10 for _ in range(10)]
 
-y,x = map(int, input().split())
-y1,x1 = map(int, input().split())
-dy = [1,1,1,0,0,-1,-1,-1]
-dx = [-1,0,1,-1,1,-1,0,1] #왼중오 / 왼 오 / 왼중오
+    # 각각 (x1,y1,x2,y2,color) 할당 완료
 
+    cnt=0
+    for k in range(N):
+        for i in range(10):
+            for j in range(10):
+                if lst[k][1]<=i<=lst[k][3] and lst[k][0]<=j<=lst[k][2]:
+                    if lst[k][4] == 1:
+                        MAP[i][j] += 1
+                    if lst[k][4] == 2:
+                        MAP[i][j] += 2
 
-def boom(y,x):
-    for i in range(8):
-        ny = y + dy[i]
-        nx = x + dx[i]
-
-        if 0<= ny < 4 and 0<=nx < 5:
-            lst[ny][nx] = '#'
-    return lst
-
-boom(y,x)
-boom(y1,x1)
-
-for i in range(len(lst)):
-    for j in range(len(lst[i])):
-        print(lst[i][j], end = ' ')
-    print()
-=======
-MAP = [[3,5,1],[3,8,1],[1,1,5]]
-
-bittary = [list(map(int, input().split()))for _ in range(2)]
-
-
-def happy(y,x):
-
-    for i in range(2):
-        for j in range(2):
-            sum = sum + MAP[y+i][x+j]
-
-#
-# MAX = int(-21e8)
-#
-# for i in range(3):
-#     for j in range(3):
-#         if happy(i,j) > MAX:
-#             MAX = happy(i,j)
-#             if MAX == happy(i,j):
-#                 MAXI = i
-#                 MAXJ = j
-# print(f'({MAXI},{MAXJ})')
->>>>>>> c7f82a5702d3cf9fab3f6e67b4f589ad8587a5ab
+    for i in range(10):
+        for j in range(10):
+            if MAP[i][j] ==3:
+                    cnt+=1
+    print(f'#{test_case} {cnt}')

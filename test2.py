@@ -1,17 +1,17 @@
-# 4 2 5 3 8
-# a=8
-# b=2
-lst = map(int, input().split())
-def BBQ():
+array = [7,5,9,0,3,1,6,2,4,8]
 
+#선택정렬
+# for i in range(len(array)):
+#     MIN = i
+#     for j in range(i+1,len(array)):
+#         if array[MIN] > array[j]:
+#             MIN = j
+#     array[i],array[MIN] = array[MIN], array[i]
+# print(array)
 
-    a=int(-21e8) # Max 구하기
-    b=int(21e8) #Min구하기
-    for i in lst:
-        if i > a:
-            a = i
-        if i < b:
-            b = i
-    return print(f'a={a}\nb={b}')
-
-BBQ()
+# 버블정렬
+for i in range(len(array)-1,0,-1):
+    for j in range(i):
+        if array[j]>array[j+1]:
+            array[j],array[j+1]=array[j+1],array[j]
+print(array)
