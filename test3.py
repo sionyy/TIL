@@ -1,19 +1,19 @@
-A=[]
-for i in range(1,80+1):
-    A.append(i)
+n = 3
+card = ['A', 'B', 'C', 'D']
+path = [0] * n
 
-# 80에서 36을 찾기
-# 40 다운
-# 20 업
-# 30 업
-# 35 업
-# 37 다운
-# 36
-cnt = 0
-while True:
-    cnt +=1
-    if int(len(A))/2 > 37:
-        A = A[:(len(A))/2]
-    if int(len(A)) == 37:
-        break
-# while True:
+
+def abc(level):
+    if level == n:
+        for i in range(n):
+            print(path[i], end=' ')
+        print()
+        return
+
+    for i in range(4):
+        if level>0 and path[level-1] >= card[i] : continue
+        path[level] = card[i]
+        abc(level + 1)
+        path[level] = ''
+
+abc(0)

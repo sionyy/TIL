@@ -1,28 +1,21 @@
-T = int(input())
-for test_case in range(1, T + 1):
+#문자를 하나 입력받아 주세요
+#그리고 입력받은 문자의 형제노드를 출력해 주세요
+# A입력시 형제없음 출력
+# B입력시 C 출력
+# E입력시 D 출력
+# F입력시 형제없음 출력
 
-    MAP = [[0]*10 for _ in range(10)]
+#부모노드를 찾고 형제노드를 찾기[세로로]
+# st = input()
+alpha = ['A','B','C','D','E','F'] #alpha[0 ~ 5]
+arr=[[0,1,1,0,0,0], #A
+     [0,0,0,1,1,0], #B
+     [0,0,0,0,0,1], #C
+     [0,0,0,0,0,0], #D
+     [0,0,0,0,0,0], #E
+     [0,0,0,0,0,0]] #F
 
-    def boom(y1, x1, y2, x2, col):
-        for i in range(y2-y1+1):
-            for j in range(x2-x1+1):
-                if col == 1:
-                    MAP[i+y1][j+x1] += 1
-                if col == 2:
-                    MAP[i+y1][j+x1] += 2
-        return
-
-    N = int(input())
-    check = [list(map(int,input().split())) for _ in range(N)]
-
-    for i in range(N):
-        boom(check[i][0],check[i][1],check[i][2],check[i][3],check[i][4])
-
-
-    cnt =0
-    for i in range(10):
-        for j in range(10):
-            if MAP[i][j] == 3:
-                cnt+=1
-
-    print(f'#{test_case} {cnt}')
+for i in range(6):
+    for j in range(6):
+        if arr[i][j] == 1:
+            print(i,j)
