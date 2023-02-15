@@ -1,21 +1,12 @@
-#문자를 하나 입력받아 주세요
-#그리고 입력받은 문자의 형제노드를 출력해 주세요
-# A입력시 형제없음 출력
-# B입력시 C 출력
-# E입력시 D 출력
-# F입력시 형제없음 출력
+T=int(input())
+for tc in range(1,T+1):
+    A = input()
+    B = input()
 
-#부모노드를 찾고 형제노드를 찾기[세로로]
-# st = input()
-alpha = ['A','B','C','D','E','F'] #alpha[0 ~ 5]
-arr=[[0,1,1,0,0,0], #A
-     [0,0,0,1,1,0], #B
-     [0,0,0,0,0,1], #C
-     [0,0,0,0,0,0], #D
-     [0,0,0,0,0,0], #E
-     [0,0,0,0,0,0]] #F
+    result = 0
+    if (A in B) == True:
+        result = 1
+    else:
+        result =0
 
-for i in range(6):
-    for j in range(6):
-        if arr[i][j] == 1:
-            print(i,j)
+    print(f'#{tc} {result}')

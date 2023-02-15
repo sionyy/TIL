@@ -1,19 +1,13 @@
-n = 3
-card = ['A', 'B', 'C', 'D']
-path = [0] * n
+A = input()
+B = input()
+print(A)
+print(B)
+result = 0
+if (A in B) == True:
+    result = 1
+else:
+    result = 0
 
+print(result)
 
-def abc(level):
-    if level == n:
-        for i in range(n):
-            print(path[i], end=' ')
-        print()
-        return
-
-    for i in range(4):
-        if level>0 and path[level-1] >= card[i] : continue
-        path[level] = card[i]
-        abc(level + 1)
-        path[level] = ''
-
-abc(0)
+print('XY' in 'xdfdXY')

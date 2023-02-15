@@ -1,17 +1,26 @@
-array = [7,5,9,0,3,1,6,2,4,8]
+A=input()
+alpha=input()
+# 65~122
+bucket = [0]*130
 
-#선택정렬
-# for i in range(len(array)):
-#     MIN = i
-#     for j in range(i+1,len(array)):
-#         if array[MIN] > array[j]:
-#             MIN = j
-#     array[i],array[MIN] = array[MIN], array[i]
-# print(array)
+for i in range (len(alpha)):
+    bucket[ord(alpha[i])]+=1
 
-# 버블정렬
-for i in range(len(array)-1,0,-1):
-    for j in range(i):
-        if array[j]>array[j+1]:
-            array[j],array[j+1]=array[j+1],array[j]
-print(array)
+for i in range (len(bucket)):
+    print(i,bucket[i],end=' ')
+    print()
+
+change=[]
+for i in range(len(A)):
+    change.append(ord(A[i]))
+# [69, 79, 71, 71, 88, 89, 80, 86, 83, 89]
+
+result = []
+for i in change:
+    result.append(bucket[i])
+
+MAX = -1
+for i in range(len(result)):
+    if result[i]>MAX:
+        MAX = result[i]
+print(MAX)
