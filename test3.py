@@ -1,13 +1,14 @@
-A = input()
-B = input()
-print(A)
-print(B)
-result = 0
-if (A in B) == True:
-    result = 1
-else:
-    result = 0
+# N,K = map(int(input().split()))
+N=5
+K=3
 
-print(result)
+arr = [[0,0,1,1,1],
+       [1,1,1,1,0],
+       [0,0,1,0,0],
+       [0,1,1,1,1],
+       [1,1,1,0,1]]
 
-print('XY' in 'xdfdXY')
+cnt=0
+for i in range(N):
+    for j in range(N-K+1):
+        print(arr[i][j:j+3])
