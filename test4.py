@@ -1,3 +1,10 @@
-lst = list(range(40))
+lst = list(input())
+st = '78ATQP'
 
-print(lst)
+result = []
+plus =''
+for i in range(len(st)):
+    for j in range(len(st)-1,-1,-1):
+        plus+=st[j]
+        result.append(plus)
+print(result)
