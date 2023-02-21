@@ -1,10 +1,11 @@
-lst = list(input())
-st = '78ATQP'
+until = int(input())
 
-result = []
-plus =''
-for i in range(len(st)):
-    for j in range(len(st)-1,-1,-1):
-        plus+=st[j]
-        result.append(plus)
-print(result)
+def down(level):
+    print(level,end='')
+    if level==until:
+        return
+    else:
+        [down(level+1) for _ in range(until)]
+
+
+print(down(0))
