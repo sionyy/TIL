@@ -1,11 +1,12 @@
-until = int(input())
-
-def down(level):
-    print(level,end='')
-    if level==until:
+lst = ['A','B','C']
+path = [0]*2
+def abc(level):
+    if level == 2:
+        for i in range(2):
+            print(path[i],end='')
+        print()
         return
-    else:
-        [down(level+1) for _ in range(until)]
-
-
-print(down(0))
+    for i in range(3):
+        path[level] = lst[i]
+        abc(level+1)
+abc(0)
