@@ -1,12 +1,20 @@
-N = int(input())
-order = [list(map(str, input().split())) for _ in range(N)]
+arr = [list(input()) for _ in range(4)]
 
-# def mouse(y,x):
-#     up = [-1,0]
-#     down = [1,0]
-#     left = [0,-1]
-#     right = [0,1]
+"""
+[
+[A_C]
+[_K_]
+[T__]
+[___]
+]
+"""
+for repeat in range(4):
+    for j in range(3):
+        for i in range(3,0,-1):
+            if arr[i-1][j] !='_' and arr[i][j] !='_': continue
+            if arr[i-1][j]!='_':
+                arr[i][j] = arr[i-1][j]
+                arr[i - 1][j] ='_'
 
-TRY=0
-point=[5,5]
-while TRY==N :
+for i in range(4):
+    print(''.join(arr[i]))
