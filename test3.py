@@ -1,21 +1,25 @@
-for tc in range(1,11):
-    testcase = int(input())
-    arr = [[0] + list(map(int, input().split()))+[0] for _ in range(100)]
+import copy
 
-    x=0
-    for j in range(101):
-        if arr[99][j] ==2:
-            x = j
-
-    y=99
-    while y>0:
-        if arr[y][x-1] ==0 and arr[y][x+1] ==0:
-            arr[y][x] = 0
-            y-=1
-        elif arr[y][x-1] ==1 and arr[y][x+1] ==0:
-            arr[y][x] = 0
-            x-=1
-        elif arr[y][x+1] ==1 and arr[y][x-1]==0:
-            arr[y][x] = 0
-            x+=1
-    print(f'#{testcase} {x-1}')
+ans = list(input())
+answer = [''] + ans
+cnt = 0
+k = 0
+def asdf(a='', lst=[]):
+    global cnt
+    global k
+    if k != 0:
+        return
+    result = copy.deepcopy(lst)
+    result.append(a)
+    if answer == result:
+        cnt += 1
+        k += 1
+        return
+    else:
+        k = 0
+    if len(result) == 4:
+        cnt += 1
+        return
+    return asdf('A', result), asdf('B', result), asdf('C', result), asdf('D', result)
+a = asdf()
+print(f'{cnt}번째')

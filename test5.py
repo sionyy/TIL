@@ -1,20 +1,23 @@
-arr = [list(input()) for _ in range(4)]
+arr=[0]*200
 
-"""
-[
-[A_C]
-[_K_]
-[T__]
-[___]
-]
-"""
-for repeat in range(4):
-    for j in range(3):
-        for i in range(3,0,-1):
-            if arr[i-1][j] !='_' and arr[i][j] !='_': continue
-            if arr[i-1][j]!='_':
-                arr[i][j] = arr[i-1][j]
-                arr[i - 1][j] ='_'
+def findboss(member):
+    if arr[ord(member)]==0:
+        return member
+    result = findboss(arr[ord(member)])
+    return result
 
-for i in range(4):
-    print(''.join(arr[i]))
+def setunion(x, y):
+    fa,fb= findboss(x), findboss(y)
+    if fa==fb:
+        return
+    arr[ord(fb)]=fa
+
+cnt=0
+N=int(input())
+for i in range(N):
+    a,b = input().split()
+    if findboss(a)!=findboss(b):
+        setunion(a,b)
+        cnt+=1
+
+print(cnt)
