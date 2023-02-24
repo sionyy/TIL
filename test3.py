@@ -1,25 +1,25 @@
-import copy
+lst = [110,70,10]
 
-ans = list(input())
-answer = [''] + ans
-cnt = 0
-k = 0
-def asdf(a='', lst=[]):
-    global cnt
-    global k
-    if k != 0:
-        return
-    result = copy.deepcopy(lst)
-    result.append(a)
-    if answer == result:
-        cnt += 1
-        k += 1
-        return
+Q = int(input()) #총돈
+
+result =[]
+for i in range(3):
+    if Q%lst[i] ==0:
+        result.append(lst[i])
+
+print(result)
+ans=0
+for i in range(3):
+    if Q % result[0] == 0:
+        ans = int(Q/result[0])
     else:
-        k = 0
-    if len(result) == 4:
-        cnt += 1
-        return
-    return asdf('A', result), asdf('B', result), asdf('C', result), asdf('D', result)
-a = asdf()
-print(f'{cnt}번째')
+        if Q < 70:
+            ans = Q//10
+        elif Q < 110:
+            ans = (Q-70)//10 +1
+        else:
+            a = Q//110
+            b = (Q-110*a)//70
+            c = (Q-110*a-70*b)//10
+            ans = a+b+c
+print(ans)
