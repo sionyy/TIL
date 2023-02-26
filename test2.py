@@ -1,41 +1,42 @@
-<<<<<<< HEAD
-T = 10
-for tc in range(1, T + 1):
-    N = int(input())
-    arr = [list(map(int, input().split())) for _ in range(N)]
+T = int(input())
+for tc in range(1,T+1):
+    N=int(input())
+    arr = [list(map(int,input().split())) for _ in range(N)]
 
-    dy = [-1, 0, 0, 1]
-    dx = [0, -1, 1, 0]
+    dy = [-1,-1,-1,0,0,1,1,1]
+    dx = [-1,0,1,-1,1,-1,0,1]
+    def find(y,x):
+        cnt=0
+        for i in range(8):
+            ny = y+dy[i]
+            nx = x+dx[i]
+            if ny<0 or nx<0 or ny>N-1 or nx>N-1 : continue
+            if arr[y][x] < arr[ny][nx]:
+                cnt+=1
+        return cnt
 
-    def check(y, x):
-        sum = 0
-        for i in range(4):
-            ny = y + dy[i]
-            nx = x + dx[i]
-            if ny<0 or nx<0 or ny>N-1 or nx>N-1:continue
-            sum += abs(arr[y][x] - arr[ny][nx])
-        return sum
+    def MAXMIN(y,x):
+        MAX=0
+        MIN = 999
+        for i in range(8):
+            ny = y+dy[i]
+            nx = x+dx[i]
+            if ny < 0 or nx < 0 or ny > N - 1 or nx > N - 1: continue
+            if arr[ny][nx] > MAX:
+                MAX = arr[ny][nx]
+            MIN = arr[y][x]
+        return MAX-MIN
 
+    result=[]
     ans=0
     for i in range(N):
         for j in range(N):
-         ans+=check(i,j)
-    print(f'#{tc} {ans}')
-=======
-#n개의 주사위를 던졌을 때 나올 수 있는 모든 경우를 출력해 주세요
-
-n=int(input())
-path=[0]*n
-lst = [1,2,3,4,5,6]
-def dice(level):
-    if level == n:
-        for i in range(n):
-            print(path[i],end=' ')
-        print()
-        return
-    for i in range(6):
-        path[level] = lst[i]
-        dice(level+1)
-
-dice(0)
->>>>>>> 2ad82a1233bb3a66b5f1f43c907ca66d3e5207f9
+            if find(i,j) == 8:
+                ans+=1
+                result.append(MAXMIN(i,j))
+    print(result)
+    MAX =0
+    for i in range(len(result)):
+        if MAX < result[i]:
+            MAX = result[i]
+    print(f'#{tc} {ans} {MAX}')
