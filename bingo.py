@@ -1,15 +1,14 @@
-arr = [list(map(int,input().split()))for _ in range(5)]
-TRY = [list(map(int,input().split()))for _ in range(5)]
-lst=[]
-for x in range(5):
-    for y in range(5):
-        lst.append(TRY[x][y])
+N=10
+lst =[1,2,3,8,0,9,9,0,8,4]
+
+result=[]
 
 
-for k in range(25):
-    for i in range(5):
-        garosum = -1
-        serosum = -1
-        for j in range(5):
-            if arr[i][j] == lst[k]:
-                arr[i][j] = 0
+for i in range(len(lst)-1):
+    result.append(lst[i])
+    if result[-1] == lst[i+1]:
+        result.append(lst[i+1])
+        del(result[-2])
+        del (result[-1])
+print(result)
+
