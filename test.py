@@ -1,19 +1,17 @@
-arr = [[0] + list(map(int, input().split())) + [0] for _ in range(100)]
+#n개의 주사위를 던졌을 때 나올 수 있는 모든 경우를 출력해 주세요
 
-x = 0
-for j in range(101):
-    if arr[99][j] == 2:
-        x = j
+n=int(input())
+path=[0]*n
+lst = [1,2,3,4,5,6]
+def dice(level):
+    if level == n:
+        for i in range(n):
+            print(path[i],end=' ')
+        print()
+        return
+    else:
+        for i in range(6):
+            path[level] = lst[i]
+            dice(level+1)
 
-y = 99
-while y > 0:
-    if arr[y][x - 1] == 0 and arr[y][x + 1] == 0:
-        arr[y][x] = 0
-        y -= 1
-    elif arr[y][x - 1] == 1 and arr[y][x + 1] == 0:
-        arr[y][x] = 0
-        x -= 1
-    elif arr[y][x + 1] == 1 and arr[y][x - 1] == 0:
-        arr[y][x] = 0
-        x += 1
-print(x)
+dice(0)
