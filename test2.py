@@ -1,18 +1,9 @@
-"""
-A 10
-B 7
-C 5
-
-AAAAAAAAAA
-BBBBBBBCCC
-CC
-"""
-
-full=''
 N=int(input())
-for i in range(N):
-    alpha,num = map(str,input().split())
-    full+=alpha*int(num)
 
-for i in range(len(full)):
-    print(full[i],end='')
+def run(x):
+    arr=[[0]*3 for _ in range(3)]
+    if x <10:
+        for i in range(3):
+            for j in range(3):
+                for k in range(1,10):
+                    arr[i][j] = k
