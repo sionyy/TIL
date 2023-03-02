@@ -1,30 +1,17 @@
-# N행 M열
-"""
-6 14
-WWWWWWWWWWWWWW
-WWRRWWBBBBBBWW
-WRRRWWWBWWWWRB
-WWBWBWWWBWRRRR
-WBWBBWWWBBWRRW
-WWWWWWWWWWWWWW
-W W W W W W W W W W W W W W
-W W R R W W B B B B B B W W
-W R R R W W W B W W W W R B
-W W B W B W W W B W R R R R
-W B W B B W W W B B W R R W
-W W W W W W W W W W W W W W
-"""
+# 횟수
+# x,y,너비,높이
+N=int(input())
+arr = [[0]*1001 for _ in range(1001)]
+for k in range(N): #y,x/i,j위치 바꿈
+    x, y, m, n = map(int, input().split())
+    for i in range(y,y+n):
+        for j in range(x,x+m):
+            arr[i][j]=k+1
 
-N,M = map(int,input().split())
-flag = [list(input()) for _ in range(N)]
-
-resultW=[]
-resultB=[]
-resultR=[]
-for i in range(N):
-    resultW.append(M-flag[i].count('W')) #각 줄 아닌알파벳 숫자 세기
-    resultB.append(M-flag[i].count('B'))
-    resultR.append(M-flag[i].count('R'))
-print(resultW)
-print(resultB)
-print(resultR)
+for k in range(1,N+1):
+    cnt=0
+    for i in range(1001):
+        for j in range(1001):
+            if arr[i][j]==k:
+                cnt+=1
+    print(cnt)
