@@ -1,21 +1,32 @@
-# 횟수
-# x,y,너비,높이
-N=int(input())
-arr = [[0]*1001 for _ in range(1001)]
-for k in range(N): #y,x가 일반적이지만 반대여서 i,j위치 바꿈
-    x, y, m, n = map(int, input().split())
-    for j in range(m):
-        for i in range(n):
-            arr[y+i][x+j]=k+1 #더하는게 아니라 =으로 할당해야함
-
-
-result=[]
-for k in range(1,N+1):
-    cnt = 0
-    for i in range(1001):
-        for j in range(1001):
-         #count 1부터 N까지를 출력하기
-            if arr[i][j]==k:
-                cnt+=1
-    print(cnt)
-
+T=int(input())
+for tc in range(1,T+1):
+    N=int(input())
+    arr=[input() for _ in range(N)]
+    result=[]
+    if N>=5:
+        for i in range(N):
+            for j in range(N):
+                    if arr[i][j] =='o':
+                        garo=0
+                        sero=0
+                        crossL =0
+                        crossR =0
+                        for k in range(5):
+                            if arr[i][k] =='o':
+                                garo+=1
+                            if arr[k][i] =='o':
+                                sero+=1
+                            if arr[k][k] == 'o':
+                                crossL +=1
+                            if arr[k][5-k-1] == 'o':
+                                crossR +=1
+                        result.append(garo)
+                        result.append(sero)
+                        result.append(crossL)
+                        result.append(crossR)
+            # print(result)
+        if 5 in result:
+            ans = 'YES'
+        else:
+            ans = 'NO'
+        print(f'#{tc} {ans}')
