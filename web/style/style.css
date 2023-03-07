@@ -1,0 +1,16 @@
+/* <link rel="stylesheet" href="web/style/style.css"> */
+
+/* 모든것에 대해 */
+*{
+    color: green;
+}
+
+/* class는 .으로 시작 */
+.ssafy{ 
+    color: orange;
+}
+
+/* id선택자는 #으로 시작 */
+#asdf{
+color:blue;
+}
