@@ -1,6 +1,5 @@
 T = 10
 for test_case in range(1, T + 1):
-    test_case
 
     N = int(input())  # 리스트 원소 개수
     lst = list(map(int, input().split()))

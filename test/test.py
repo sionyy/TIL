@@ -1,24 +1,31 @@
-N, M = map(int, input().split())  # 입력값 할당
-flag = [input() for _ in range(N)]  # 국기 할당
+# 세로 R
+# 가로 C
+result=[]
+def check(y1,x1,y2,x2,y3,x3,y4,x4):
+    for i in range(y2-y1+1):
+        for j in range(x1,x2+1):
+            arr[i][j]+=1
+    for i in range(y4-y3+1):
+        for j in range(x3,x4+1):
+            arr[i][j]+=1
 
-needW, needB, needR = [], [], []  # 각각 행에서 W,B,R과 다른 알파벳 구하기
-need = [[], [], []]
-for i in range(len(flag)):
-    needW.append(M - flag[i].count('W'))  # 각 행의 크기인 M에서 / 'W'가 없는만큼 append
-    needB.append(M - flag[i].count('B'))
-    needR.append(M - flag[i].count('R'))
-print(needW)
-print(needB)
-# print(needR)
-# result = []
-# sumW = 0
-# for i in range(0, N - 2):  # 시작점인서 B,R의 최소필요갯수 2를 제외한 최대 W의 행 개수
-#     sumB = 0
-#     sumW += needW[i]
-#     for j in range(i + 1, N - 1):  # W의 최소필요행 1행과 R의 최소필요행 1행을 제외한 범위
-#         sumR = 0
-#         sumB += needB[j]
-#         for k in range(j + 1, N):  # W,R을 제외한 끝까지의 행에 대한 범위
-#             sumR += needR[k]
-#         result.append(sumW + sumB + sumR)
-# ans = min(result)  # 가장 적은 값이 ans!
+    for i in range(MAXX):
+        for j in range(MAXX):
+            if arr[i][j]==2:
+                if arr[i+2][j+2] ==2 or arr[i+2][j-2]==2 or arr[i-2][j+2] ==2 or arr[i-2][j-2] ==2:
+                    return result.append('a')
+                if arr[i+1][j] ==2 or arr[i-1][j]==2 or arr[i][j+1]==2 or arr[i][j-1] == 2:
+                    return result.append('b')
+                if arr[i+1][j+1] ==2 or arr[i+1][j-1]==2 or arr[i-1][j+1] ==2 or arr[i-1][j-1] ==2:
+                    return result.append('c')
+    return result.append('d')
+
+for repeat in range(4):
+    y1,x1,y2,x2,y3,x3,y4,x4=map(int,input().split())
+    MAXX = max(y1,x1,y2,x2,y3,x3,y4,x4)+1
+
+    arr=[[0]*MAXX for _ in range(MAXX)]
+    check(y1,x1,y2,x2,y3,x3,y4,x4)
+
+print(result)
+
