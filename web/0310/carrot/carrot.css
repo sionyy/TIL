@@ -1,0 +1,19 @@
+.bar{
+    margin: 2rem;
+    color: white;
+}
+
+.imgcover{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 60px;
+    z-index:-1;
+    /* background-size: cover */
+}
+
+.main{
+    font-size:100px;
+    color:white;
+    
+}
