@@ -1,15 +1,25 @@
-N=int(input())
+import sys
+input = sys.stdin.readline
 
+N=int(input())
 lst=[]
-abslst=[]
+lst2=[]
 for i in range(N):
     lst.append(int(input()))
-    abslst.append(abs(lst[-1]))
-    if len(lst)==0:
-        print(0)
-    elif lst[-1]==0:
-        for i in range(len(abslst)):
-            if min(abslst)==abslst[i]:
-                print(lst[i])
-                del lst[i]
-                del abslst[i]
+
+lst2=lst[:]
+lst2.sort()
+#lst=[10,1,5,2,3]
+#lst=[1,2,3,5,10]
+
+ans=1
+for i in range(len(lst)-1,0,-1):
+    if lst==lst2:
+        break
+    ans+=1
+    for j in range(i):
+        if lst[i] == lst2[i]:
+            break
+        if lst[j]>lst[j+1]:
+            lst[j],lst[j+1]=lst[j+1],lst[j]
+print(ans)
